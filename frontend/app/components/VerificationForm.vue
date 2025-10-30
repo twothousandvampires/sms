@@ -79,12 +79,16 @@ const countdown = ref(0)
         let countdownInterval = setInterval(() => {
             countdown.value--
             if (countdown.value <= 0) {
+                countdown.value = 0
                 clearInterval(countdownInterval)
             }
         }, 1000)
     }
 
     const handleSendCode = async () => {
+        // вместо debounce
+        if(countdown.value > 0) return
+        
         loading.value = true
         message.value = ''
         
