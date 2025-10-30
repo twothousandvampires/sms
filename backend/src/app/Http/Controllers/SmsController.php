@@ -37,7 +37,7 @@ class SmsController extends Controller
     {
         $request->validate([
             'phone' => 'required|string|min:10|max:20',
-            'code' => 'required|string|size:6'
+            'code' => 'required|string|size:4'
         ]);
 
         try {

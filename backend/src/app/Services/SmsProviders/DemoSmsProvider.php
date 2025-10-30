@@ -40,6 +40,6 @@ class DemoSmsProvider implements SmsProviderInterface
 
     private function generateCode(): string
     {
-        return sprintf("%06d", random_int(1, 10 ** 6 - 1));
+        return sprintf("%04d", random_int(1, 10 ** 4- 1));
     }
 }

@@ -1,4 +1,4 @@
-export const useSms = () => {
+export const useSmsVerification = () => {
   const apiBase = 'http://localhost:8000/api'
 
   const sendCode = async (phone: string) => {

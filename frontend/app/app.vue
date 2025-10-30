@@ -5,7 +5,7 @@
 </template>
 
 <style>
-/* Глобальные стили */
+
 * {
   margin: 0;
   padding: 0;
