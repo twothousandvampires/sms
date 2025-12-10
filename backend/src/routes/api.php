@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SmsController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('api')->group(function () {
-    // SMS верификация
-    Route::post('/send-code', [SmsController::class, 'sendCode']);
-    Route::post('/verify-code', [SmsController::class, 'verifyCode']);
+Route::post('/send-code', [SmsController::class, 'sendCode']);
+Route::post('/verify-code', [SmsController::class, 'verifyCode']);
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::get('/me', [AuthController::class, 'me']);
+    Route::apiResource('tasks', TaskController::class);
+    Route::post('/get-task-filters', [TaskController::class, 'getFilters']);
 });

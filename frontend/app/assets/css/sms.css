@@ -1,3 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #f8fafc;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 20px;
+  position: sticky;
+  padding: 10px;
+  top: 0px;
+  background: linear-gradient(135deg, #4299e1, #3182ce);;
+}
+
+#nav a{
+   text-decoration: none;
+   color: #2d3748;
+   font-size: 20px;
+   font-weight: 600;
+}
+
 .container {
   max-width: 440px;
   margin: 0 auto;
@@ -62,7 +96,38 @@ label {
   font-size: 0.95rem;
 }
 
-input {
+.cart-actions{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#create-task{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-cart{
+  padding: 4px;
+  background: #f8fafc;
+  border-radius: 4px;
+  margin-bottom:6px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.task-cart p, .task-cart h3{
+  text-align: center;
+}
+
+.filter-select{
+  width: 50%;
+}
+
+input, textarea, select, button {
   width: 100%;
   padding: 14px 16px;
   border: 2px solid #e2e8f0;
@@ -100,6 +165,7 @@ input::placeholder {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .btn:disabled {
@@ -113,19 +179,14 @@ input::placeholder {
   color: white;
 }
 
-.btn.primary:not(:disabled):hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(66, 153, 225, 0.4);
+.btn.danger {
+  background: red;
+  color: white;
 }
 
 .btn.success {
   background: linear-gradient(135deg, #48bb78, #38a169);
   color: white;
-}
-
-.btn.success:not(:disabled):hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
 }
 
 .button-group {

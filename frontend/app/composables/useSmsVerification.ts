@@ -1,4 +1,5 @@
 export const useSmsVerification = () => {
+  //todo config
   const apiBase = 'http://localhost:8000/api'
 
   const sendCode = async (phone: string) => {
