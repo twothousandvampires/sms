@@ -13,4 +13,4 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 COPY ./src/ .
 
-CMD ["sh", "-c", "sleep 25 && composer install && composer require laravel/sanctum --no-interaction && composer require spatie/laravel-medialibrary:^11.0 --no-interaction && php artisan key:generate && php artisan vendor:publish --provider='Laravel\\\\Sanctum\\\\SanctumServiceProvider' --force && php artisan vendor:publish --provider='Spatie\\\\MediaLibrary\\\\MediaLibraryServiceProvider' --tag='migrations' --force && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000"]
+CMD ["sh", "-c", "sleep 15 && composer install && composer require laravel/sanctum --no-interaction && composer require spatie/laravel-medialibrary:^11.0 --no-interaction && php artisan key:generate && php artisan vendor:publish --provider='Laravel\\\\Sanctum\\\\SanctumServiceProvider' --force && php artisan vendor:publish --provider='Spatie\\\\MediaLibrary\\\\MediaLibraryServiceProvider' --tag='migrations' --force && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000"]
